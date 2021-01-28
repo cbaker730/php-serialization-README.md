@@ -30,7 +30,7 @@ Source: https://www.youtube.com/watch?v=HaW15aMzBUM&t=1257s
     ?>
 
 
-#### Make the script callable from an HTTP server with $_GET['arepo'] and host on apache2 or php -S 127.0.0.1:80. Call it with 'curl -XGET -d '<serialized object>' localhost/code.php'
+#### Make the script callable from an HTTP server with $_GET['arepo'] and host on apache2 or php -S 127.0.0.1:80. Call it with 'curl -XGET -d '-serialized object-' localhost/code.php' or http://127.0.0.1/code.php?arepo=-serialized object-
 
     <?php
 
