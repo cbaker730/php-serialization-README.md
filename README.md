@@ -30,7 +30,7 @@ Source: https://www.youtube.com/watch?v=HaW15aMzBUM&t=1257s
     ?>
 
 
-#### Make the script callable from an HTTP server with $_GET['arepo'] and host on apache2 or php -S 127.0.0.1:80. Call it with 'curl -XGET -d '-serialized object-' localhost/code.php' or http://127.0.0.1/code.php?arepo=-serialized object-
+#### Make the script callable from an HTTP server with $_GET['arepo'] and host on apache2 or php -S 127.0.0.1:80. Call it with 'curl -XGET -d 'O:4:%22User%22:2:{s:8:%22username%22;s:5:%22chris%22;s:7:%22isAdmin%22;b:1;}' localhost/code.php' or http://127.0.0.1/code.php?arepo=O:4:%22User%22:2:{s:8:%22username%22;s:5:%22chris%22;s:7:%22isAdmin%22;b:1;}
 
     <?php
 
@@ -48,14 +48,14 @@ Source: https://www.youtube.com/watch?v=HaW15aMzBUM&t=1257s
             }
     }
 
-    //$obj = new User();
-    //$obj->username = 'chris';
-    //$obj->isAdmin = False;
+    $obj = new User();
+    $obj->username = 'chris';
+    $obj->isAdmin = False;
 
-    $obj = unserialize($_GET['arepo']);     # the serialized object we pass in needs to instantiate a new User object and set username and isAdmin
+    //$obj = unserialize($_GET['arepo']);
     $obj->PrintData();
-    
     echo serialize($obj);
+
 
     ?>
 
